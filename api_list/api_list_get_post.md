@@ -11,13 +11,19 @@ Request
 }
 
 Response (200 OK)
+
+```json
 {
-  "id": str,
-  "content": str,
-  "created_at": datetime,
+  "messages": [
+    {
+      "id": "string",
+      "content": "string",
+      "created_at": "datetime"
+    }
+  ]
 }
 
 Response (400 Bat request)
 {
-  state: str
+  "state": str
 }
