@@ -1,15 +1,18 @@
 import pyxel
 
-class TextField:
-    def __init__(self, x: int = 0, y: int = 0, width: int = 100, height: int = 20):
+class Button:
+    def __init__(self, text: str, x: int = 0, y: int = 0, width: int = 100, height: int = 20, on_click: callable = None):
         self.x = x
         self.y = y
         self.width = width
         self.height = height
-        self.text = ""
+        self.text = text
+        self.on_click = on_click
 
     def update(self):
-        pass
+        if self.mouse_over() and pyxel.btnp(pyxel.MOUSE_BUTTON_LEFT):
+            if self.on_click:
+                self.on_click()
 
     def draw(self):
         pyxel.rect(self.x, self.y, self.width, self.height, 1)
