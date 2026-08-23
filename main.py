@@ -1,5 +1,9 @@
+from frontend.app import App
+
+
 def main():
-    print("Hello from retro-twitter!")
+    app = App()
+    app.run()
 
 
 if __name__ == "__main__":
